@@ -42,10 +42,12 @@ class WikiApiTestCase(APITestCase):
     def test_article_not_found(self):
         """
         Testuje případ, kdy hledaný článek neexistuje.
-        Ověřuje, že API vrátí status 404 a neobsahuje klíč 'result' v odpovědi.
+        Ověřuje, že API vrátí status 404 a obsahuje klíč 'result' s hodnotou 'No results found'.
         """
         response = self.client.get(reverse('get_article', args=['nonexistentarticle']),
-                                    HTTP_ACCEPT_LANGUAGE='en')
+                                HTTP_ACCEPT_LANGUAGE='en')
         data = json.loads(response.content)
         self.assertEqual(response.status_code, 404)
-        self.assertNotIn('result', data)
+        self.assertIn('result', data)
+        self.assertEqual(data['result'], 'No results found')
+        

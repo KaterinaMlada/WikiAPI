@@ -7,3 +7,4 @@ wiki/__pycache__/views.cpython-311.pyc
 wiki_orgis/__pycache__/settings.cpython-311.pyc
 wiki_orgis/__pycache__/wsgi.cpython-311.pyc
 wiki_orgis/__pycache__/urls.cpython-311.pyc
+wiki/__pycache__/tests.cpython-311.pyc
