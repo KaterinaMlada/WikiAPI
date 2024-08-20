@@ -33,7 +33,7 @@ The curl command retrieves JSON data from the specified URL and outputs it to th
 
 To run tests, use:
 
-python manage.py test
+python manage.py test wiki
 
 
 
